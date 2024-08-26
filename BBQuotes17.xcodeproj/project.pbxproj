@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40D792C2C7CB55B00EDF657 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D792B2C7CB55B00EDF657 /* Quote.swift */; };
+		F40D792E2C7CB5C500EDF657 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D792D2C7CB5C500EDF657 /* Character.swift */; };
+		F40D79302C7CB68900EDF657 /* Death.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D792F2C7CB68900EDF657 /* Death.swift */; };
+		F46379CA2C7CBE23003AAE6A /* FetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46379C92C7CBE23003AAE6A /* FetchService.swift */; };
+		F46379CC2C7CCEE0003AAE6A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46379CB2C7CCEE0003AAE6A /* ViewModel.swift */; };
 		F4815E642C7A16DD008E3084 /* BBQuotes17App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815E632C7A16DD008E3084 /* BBQuotes17App.swift */; };
 		F4815E662C7A16DD008E3084 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815E652C7A16DD008E3084 /* ContentView.swift */; };
 		F4815E682C7A16DE008E3084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4815E672C7A16DE008E3084 /* Assets.xcassets */; };
 		F4815E6B2C7A16DE008E3084 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4815E6A2C7A16DE008E3084 /* Preview Assets.xcassets */; };
+		F4815E752C7A17B2008E3084 /* samplecharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = F4815E722C7A17B2008E3084 /* samplecharacter.json */; };
+		F4815E762C7A17B2008E3084 /* sampledeath.json in Resources */ = {isa = PBXBuildFile; fileRef = F4815E732C7A17B2008E3084 /* sampledeath.json */; };
+		F4815E772C7A17B2008E3084 /* samplequote.json in Resources */ = {isa = PBXBuildFile; fileRef = F4815E742C7A17B2008E3084 /* samplequote.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F40D792B2C7CB55B00EDF657 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		F40D792D2C7CB5C500EDF657 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		F40D792F2C7CB68900EDF657 /* Death.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Death.swift; sourceTree = "<group>"; };
+		F46379C92C7CBE23003AAE6A /* FetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchService.swift; sourceTree = "<group>"; };
+		F46379CB2C7CCEE0003AAE6A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		F4815E602C7A16DD008E3084 /* BBQuotes17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQuotes17.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4815E632C7A16DD008E3084 /* BBQuotes17App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBQuotes17App.swift; sourceTree = "<group>"; };
 		F4815E652C7A16DD008E3084 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4815E672C7A16DE008E3084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4815E6A2C7A16DE008E3084 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F4815E722C7A17B2008E3084 /* samplecharacter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = samplecharacter.json; sourceTree = "<group>"; };
+		F4815E732C7A17B2008E3084 /* sampledeath.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampledeath.json; sourceTree = "<group>"; };
+		F4815E742C7A17B2008E3084 /* samplequote.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = samplequote.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +69,13 @@
 			children = (
 				F4815E632C7A16DD008E3084 /* BBQuotes17App.swift */,
 				F4815E652C7A16DD008E3084 /* ContentView.swift */,
+				F40D792B2C7CB55B00EDF657 /* Quote.swift */,
+				F40D792D2C7CB5C500EDF657 /* Character.swift */,
+				F46379CB2C7CCEE0003AAE6A /* ViewModel.swift */,
+				F46379C92C7CBE23003AAE6A /* FetchService.swift */,
+				F40D792F2C7CB68900EDF657 /* Death.swift */,
 				F4815E672C7A16DE008E3084 /* Assets.xcassets */,
+				F4815E712C7A179B008E3084 /* SampleData */,
 				F4815E692C7A16DE008E3084 /* Preview Content */,
 			);
 			path = BBQuotes17;
@@ -65,6 +87,16 @@
 				F4815E6A2C7A16DE008E3084 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F4815E712C7A179B008E3084 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				F4815E722C7A17B2008E3084 /* samplecharacter.json */,
+				F4815E732C7A17B2008E3084 /* sampledeath.json */,
+				F4815E742C7A17B2008E3084 /* samplequote.json */,
+			);
+			path = SampleData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +157,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4815E762C7A17B2008E3084 /* sampledeath.json in Resources */,
 				F4815E6B2C7A16DE008E3084 /* Preview Assets.xcassets in Resources */,
+				F4815E752C7A17B2008E3084 /* samplecharacter.json in Resources */,
+				F4815E772C7A17B2008E3084 /* samplequote.json in Resources */,
 				F4815E682C7A16DE008E3084 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +172,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40D79302C7CB68900EDF657 /* Death.swift in Sources */,
 				F4815E662C7A16DD008E3084 /* ContentView.swift in Sources */,
+				F40D792C2C7CB55B00EDF657 /* Quote.swift in Sources */,
 				F4815E642C7A16DD008E3084 /* BBQuotes17App.swift in Sources */,
+				F46379CA2C7CBE23003AAE6A /* FetchService.swift in Sources */,
+				F40D792E2C7CB5C500EDF657 /* Character.swift in Sources */,
+				F46379CC2C7CCEE0003AAE6A /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
