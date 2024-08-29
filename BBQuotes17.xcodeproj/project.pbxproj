@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F400BDDD2C80898200E9B03D /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400BDDC2C80898200E9B03D /* CharacterView.swift */; };
+		F400BDDF2C80991B00E9B03D /* sampleepisode.json in Resources */ = {isa = PBXBuildFile; fileRef = F400BDDE2C80991B00E9B03D /* sampleepisode.json */; };
+		F400BDE12C809E7700E9B03D /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400BDE02C809E7700E9B03D /* StringExt.swift */; };
+		F400BDE32C809FC600E9B03D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400BDE22C809FC600E9B03D /* Constants.swift */; };
+		F400BDE52C80A10600E9B03D /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400BDE42C80A10600E9B03D /* Episode.swift */; };
 		F40D792C2C7CB55B00EDF657 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D792B2C7CB55B00EDF657 /* Quote.swift */; };
 		F40D792E2C7CB5C500EDF657 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D792D2C7CB5C500EDF657 /* Character.swift */; };
 		F40D79302C7CB68900EDF657 /* Death.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D792F2C7CB68900EDF657 /* Death.swift */; };
@@ -23,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F400BDDC2C80898200E9B03D /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		F400BDDE2C80991B00E9B03D /* sampleepisode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleepisode.json; sourceTree = "<group>"; };
+		F400BDE02C809E7700E9B03D /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		F400BDE22C809FC600E9B03D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F400BDE42C80A10600E9B03D /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		F40D792B2C7CB55B00EDF657 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		F40D792D2C7CB5C500EDF657 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		F40D792F2C7CB68900EDF657 /* Death.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Death.swift; sourceTree = "<group>"; };
@@ -72,11 +82,15 @@
 				F4815E632C7A16DD008E3084 /* BBQuotes17App.swift */,
 				F4815E652C7A16DD008E3084 /* ContentView.swift */,
 				F434DA242C7DFEFA0005DB92 /* QuoteView.swift */,
+				F400BDDC2C80898200E9B03D /* CharacterView.swift */,
+				F400BDE22C809FC600E9B03D /* Constants.swift */,
 				F40D792B2C7CB55B00EDF657 /* Quote.swift */,
 				F40D792D2C7CB5C500EDF657 /* Character.swift */,
+				F400BDE42C80A10600E9B03D /* Episode.swift */,
 				F46379CB2C7CCEE0003AAE6A /* ViewModel.swift */,
 				F46379C92C7CBE23003AAE6A /* FetchService.swift */,
 				F40D792F2C7CB68900EDF657 /* Death.swift */,
+				F400BDE02C809E7700E9B03D /* StringExt.swift */,
 				F4815E672C7A16DE008E3084 /* Assets.xcassets */,
 				F4815E712C7A179B008E3084 /* SampleData */,
 				F4815E692C7A16DE008E3084 /* Preview Content */,
@@ -97,6 +111,7 @@
 			children = (
 				F4815E722C7A17B2008E3084 /* samplecharacter.json */,
 				F4815E732C7A17B2008E3084 /* sampledeath.json */,
+				F400BDDE2C80991B00E9B03D /* sampleepisode.json */,
 				F4815E742C7A17B2008E3084 /* samplequote.json */,
 			);
 			path = SampleData;
@@ -161,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4815E762C7A17B2008E3084 /* sampledeath.json in Resources */,
+				F400BDDF2C80991B00E9B03D /* sampleepisode.json in Resources */,
 				F4815E6B2C7A16DE008E3084 /* Preview Assets.xcassets in Resources */,
 				F4815E752C7A17B2008E3084 /* samplecharacter.json in Resources */,
 				F4815E772C7A17B2008E3084 /* samplequote.json in Resources */,
@@ -176,11 +192,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F40D79302C7CB68900EDF657 /* Death.swift in Sources */,
+				F400BDE52C80A10600E9B03D /* Episode.swift in Sources */,
+				F400BDE32C809FC600E9B03D /* Constants.swift in Sources */,
 				F4815E662C7A16DD008E3084 /* ContentView.swift in Sources */,
 				F40D792C2C7CB55B00EDF657 /* Quote.swift in Sources */,
 				F434DA252C7DFEFA0005DB92 /* QuoteView.swift in Sources */,
+				F400BDE12C809E7700E9B03D /* StringExt.swift in Sources */,
 				F4815E642C7A16DD008E3084 /* BBQuotes17App.swift in Sources */,
 				F46379CA2C7CBE23003AAE6A /* FetchService.swift in Sources */,
+				F400BDDD2C80898200E9B03D /* CharacterView.swift in Sources */,
 				F40D792E2C7CB5C500EDF657 /* Character.swift in Sources */,
 				F46379CC2C7CCEE0003AAE6A /* ViewModel.swift in Sources */,
 			);

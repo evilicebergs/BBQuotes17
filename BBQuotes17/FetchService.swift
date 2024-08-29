@@ -73,4 +73,8 @@ struct FetchService {
         }
         return nil
     }
+    
+    func fetchEpisode() async throws -> Episode? {
+        return nil
+    }
 }
