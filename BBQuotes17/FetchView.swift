@@ -119,6 +119,18 @@ struct FetchView: View {
         .sheet(isPresented: $showCharacterInfo, content: {
             CharacterView(character: vm.character, show: show)
         })
+        .onAppear() {
+            let num = Int.random(in: 0...100)
+            if num % 2 == 0 {
+                Task {
+                    await vm.getEpisode(for: show)
+                }
+            } else {
+                Task {
+                    await vm.getQuoteData(for: show)
+                }
+            }
+        }
     }
 }
 
