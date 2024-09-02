@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct Episode {
-    let production: String
+struct Episode: Decodable {
     let episode: Int
     let title: String
     let image: URL
@@ -16,5 +15,14 @@ struct Episode {
     let writtenBy: String
     let directedBy: String
     let airDate: String
-    let characters: [String]
+    
+    var seasonEpisode: String {
+        var episodeString = String(episode)
+        let season = episodeString.removeFirst()
+        
+        if episodeString.first! == "0" {
+            episodeString = String(episodeString.removeLast())
+        }
+        return "Season \(season) Episode \(episodeString)"
+    }
 }

@@ -11,19 +11,19 @@ struct ContentView: View {
     var body: some View {
         TabView {
             
-            QuoteView(show: Constants.bbName)
+            FetchView(show: Constants.bbName)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(Constants.bbName, systemImage: "tortoise")
                 }
             
-            QuoteView(show: Constants.bcsName)
+            FetchView(show: Constants.bcsName)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(Constants.bcsName, systemImage: "briefcase")
                 }
             
-            QuoteView(show: Constants.ecName)
+            FetchView(show: Constants.ecName)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(Constants.ecName, systemImage: "car")
@@ -36,3 +36,11 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+/*
+ 1 - fetch quote automatically when app launches
+ 2 - when fetching quote make image random
+ 3 - fetch random character, dont forget to check production /characters/random
+ 4 - on characterView add a quote and button to fetch a new random quote /character=Walter+White
+ 5 - add chance to fetch simpsons quote
+ 
+ */

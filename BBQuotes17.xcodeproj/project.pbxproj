@@ -15,7 +15,7 @@
 		F40D792C2C7CB55B00EDF657 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D792B2C7CB55B00EDF657 /* Quote.swift */; };
 		F40D792E2C7CB5C500EDF657 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D792D2C7CB5C500EDF657 /* Character.swift */; };
 		F40D79302C7CB68900EDF657 /* Death.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D792F2C7CB68900EDF657 /* Death.swift */; };
-		F434DA252C7DFEFA0005DB92 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434DA242C7DFEFA0005DB92 /* QuoteView.swift */; };
+		F434DA252C7DFEFA0005DB92 /* FetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434DA242C7DFEFA0005DB92 /* FetchView.swift */; };
 		F46379CA2C7CBE23003AAE6A /* FetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46379C92C7CBE23003AAE6A /* FetchService.swift */; };
 		F46379CC2C7CCEE0003AAE6A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46379CB2C7CCEE0003AAE6A /* ViewModel.swift */; };
 		F4815E642C7A16DD008E3084 /* BBQuotes17App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815E632C7A16DD008E3084 /* BBQuotes17App.swift */; };
@@ -25,6 +25,7 @@
 		F4815E752C7A17B2008E3084 /* samplecharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = F4815E722C7A17B2008E3084 /* samplecharacter.json */; };
 		F4815E762C7A17B2008E3084 /* sampledeath.json in Resources */ = {isa = PBXBuildFile; fileRef = F4815E732C7A17B2008E3084 /* sampledeath.json */; };
 		F4815E772C7A17B2008E3084 /* samplequote.json in Resources */ = {isa = PBXBuildFile; fileRef = F4815E742C7A17B2008E3084 /* samplequote.json */; };
+		F4E7C9522C85D5BA004CAD19 /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E7C9512C85D5BA004CAD19 /* EpisodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,7 @@
 		F40D792B2C7CB55B00EDF657 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		F40D792D2C7CB5C500EDF657 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		F40D792F2C7CB68900EDF657 /* Death.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Death.swift; sourceTree = "<group>"; };
-		F434DA242C7DFEFA0005DB92 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		F434DA242C7DFEFA0005DB92 /* FetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchView.swift; sourceTree = "<group>"; };
 		F46379C92C7CBE23003AAE6A /* FetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchService.swift; sourceTree = "<group>"; };
 		F46379CB2C7CCEE0003AAE6A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		F4815E602C7A16DD008E3084 /* BBQuotes17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQuotes17.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +48,7 @@
 		F4815E722C7A17B2008E3084 /* samplecharacter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = samplecharacter.json; sourceTree = "<group>"; };
 		F4815E732C7A17B2008E3084 /* sampledeath.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampledeath.json; sourceTree = "<group>"; };
 		F4815E742C7A17B2008E3084 /* samplequote.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = samplequote.json; sourceTree = "<group>"; };
+		F4E7C9512C85D5BA004CAD19 /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +83,9 @@
 			children = (
 				F4815E632C7A16DD008E3084 /* BBQuotes17App.swift */,
 				F4815E652C7A16DD008E3084 /* ContentView.swift */,
-				F434DA242C7DFEFA0005DB92 /* QuoteView.swift */,
+				F434DA242C7DFEFA0005DB92 /* FetchView.swift */,
 				F400BDDC2C80898200E9B03D /* CharacterView.swift */,
+				F4E7C9512C85D5BA004CAD19 /* EpisodeView.swift */,
 				F400BDE22C809FC600E9B03D /* Constants.swift */,
 				F40D792B2C7CB55B00EDF657 /* Quote.swift */,
 				F40D792D2C7CB5C500EDF657 /* Character.swift */,
@@ -194,9 +197,10 @@
 				F40D79302C7CB68900EDF657 /* Death.swift in Sources */,
 				F400BDE52C80A10600E9B03D /* Episode.swift in Sources */,
 				F400BDE32C809FC600E9B03D /* Constants.swift in Sources */,
+				F4E7C9522C85D5BA004CAD19 /* EpisodeView.swift in Sources */,
 				F4815E662C7A16DD008E3084 /* ContentView.swift in Sources */,
 				F40D792C2C7CB55B00EDF657 /* Quote.swift in Sources */,
-				F434DA252C7DFEFA0005DB92 /* QuoteView.swift in Sources */,
+				F434DA252C7DFEFA0005DB92 /* FetchView.swift in Sources */,
 				F400BDE12C809E7700E9B03D /* StringExt.swift in Sources */,
 				F4815E642C7A16DD008E3084 /* BBQuotes17App.swift in Sources */,
 				F46379CA2C7CBE23003AAE6A /* FetchService.swift in Sources */,
