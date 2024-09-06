@@ -15,6 +15,8 @@ struct FetchView: View {
     
     @State var showCharacterInfo = false
     
+    @State var randomCharacter = false
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -43,7 +45,7 @@ struct FetchView: View {
                                 .padding(.horizontal)
                             
                             ZStack(alignment: .bottom) {
-                                AsyncImage(url: vm.character.images[0]) { image in
+                                AsyncImage(url: vm.character.images.randomElement()) { image in
                                     image
                                         .resizable()
                                         .scaledToFill()
@@ -70,6 +72,11 @@ struct FetchView: View {
                             
                         case .failed(let error):
                             Text(error.localizedDescription)
+                        case .successRandCharacter:
+                            RandomCharacterView(character: vm.character)
+                                .onTapGesture {
+                                    showCharacterInfo.toggle()
+                                }
                         }
                         
                         Spacer(minLength: 20)
@@ -77,11 +84,26 @@ struct FetchView: View {
                     HStack {
                         Button {
                             Task {
+                                await vm.getRandCharacter(from: show)
+                            }
+                        } label: {
+                            Text("Get Random Character")
+                                .minimumScaleFactor(0.5)
+                                .multilineTextAlignment(.center)
+                                //.font(.title3)
+                                .foregroundStyle(.white)
+                                .padding()
+                                .background(Color(show.removeSpaces() + "Button"))
+                                .clipShape(.rect(cornerRadius: 7))
+                                .shadow(color: Color(show.removeSpaces() + "Shadow"), radius: 2)
+                        }
+                        Button {
+                            Task {
                                 await vm.getQuoteData(for: show)
                             }
                         } label: {
                             Text("Get Random Quote")
-                                .font(.title3)
+                                //.font(.title3)
                                 .foregroundStyle(.white)
                                 .padding()
                                 .background(Color(show.removeSpaces() + "Button"))
@@ -95,7 +117,7 @@ struct FetchView: View {
                             }
                         } label: {
                             Text("Get Random Episode")
-                                .font(.title3)
+                                //.font(.title3)
                                 .foregroundStyle(.white)
                                 .padding()
                                 .background(Color(show.removeSpaces() + "Button"))
@@ -131,6 +153,7 @@ struct FetchView: View {
                 }
             }
         }
+        
     }
 }
 

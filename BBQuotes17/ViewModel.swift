@@ -14,6 +14,7 @@ class ViewModel {
         case fetching
         case successQuote
         case successEpisode
+        case successRandCharacter
         case failed(error: Error)
     }
     //no one can change this property
@@ -63,6 +64,22 @@ class ViewModel {
                 
                 status = .successEpisode
             }
+        } catch {
+            status = .failed(error: error)
+        }
+    }
+    
+    func getRandCharacter(from show: String) async {
+        status = .fetching
+        
+        do {
+            character = try await fetcher.getRandomCharacter()
+            if character.productions.contains(show) {
+                status = .successRandCharacter
+            } else {
+                await getRandCharacter(from: show)
+            }
+            
         } catch {
             status = .failed(error: error)
         }

@@ -15,6 +15,7 @@ struct Character: Decodable {
     let aliases: [String]
     let status: String
     let portrayedBy: String
+    let productions: [String]
     var death: Death?
     
     enum CodingKeys: CodingKey {
@@ -25,6 +26,7 @@ struct Character: Decodable {
         case aliases
         case status
         case portrayedBy
+        case productions
     }
     
     init(from decoder: any Decoder) throws {
@@ -36,7 +38,7 @@ struct Character: Decodable {
         aliases = try container.decode([String].self, forKey: .aliases)
         status = try container.decode(String.self, forKey: .status)
         portrayedBy = try container.decode(String.self, forKey: .portrayedBy)
-        
+        productions = try container.decode([String].self, forKey: .productions)
         let deathDecoder = JSONDecoder()
         deathDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
