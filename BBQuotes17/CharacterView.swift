@@ -43,14 +43,36 @@ struct CharacterView: View {
                         .padding(.top, 60)
                         
                         VStack(alignment: .leading) {
-                            Text(quote.quote)
-                                .minimumScaleFactor(0.5)
-                                .multilineTextAlignment(.center)
-                                .padding()
-                                .background(.ultraThinMaterial)
-                                .clipShape(.rect(cornerRadius: 25))
-                                .foregroundStyle(.white)
-                                .frame(alignment: .center)
+                            switch vm.quoteStatus {
+                            case .nStarted:
+                                Text(quote.quote)
+                                    .minimumScaleFactor(0.5)
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                                    .background(.ultraThinMaterial)
+                                    .clipShape(.rect(cornerRadius: 25))
+                                    .foregroundStyle(.white)
+                                    .frame(alignment: .center)
+                            case .randomQuote:
+                                Text(quote.quote)
+                                    .minimumScaleFactor(0.5)
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                                    .background(.ultraThinMaterial)
+                                    .clipShape(.rect(cornerRadius: 25))
+                                    .foregroundStyle(.white)
+                                    .frame(alignment: .center)
+                            case .fetching:
+                                HStack(alignment: .center, content: {
+                                    Spacer()
+                                    ProgressView()
+                                        .padding()
+                                    Spacer()
+                                })
+                            case .failed(let error):
+                                Text(error.localizedDescription)
+                            }
+                            
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text(character.name)
@@ -63,31 +85,17 @@ struct CharacterView: View {
                                     Task {
                                         await vm.getCharacterQuote(for: character.name, from: show)
                                     }
-                                    quote = vm.quote
-                                }, label: {
-                                    switch vm.quoteStatus {
-                                    case .nStarted:
-                                        Image(systemName: "arrow.clockwise")
-                                            .font(.largeTitle)
-                                            .foregroundStyle(.white)
-                                            .padding()
-                                            .background(.ultraThinMaterial)
-                                            .clipShape(.rect(cornerRadius: 15))
-                                    case .randomQuote:
-                                        Image(systemName: "arrow.clockwise")
-                                            .font(.largeTitle)
-                                            .foregroundStyle(.white)
-                                            .padding()
-                                            .background(.ultraThinMaterial)
-                                            .clipShape(.rect(cornerRadius: 15))
-                                    case .fetching:
-                                        ProgressView()
-                                            .padding()
-                                            .background(.ultraThinMaterial)
-                                            .clipShape(.rect(cornerRadius: 15))
-                                    case .failed(let error):
-                                        Text(error.localizedDescription)
+                                    withAnimation {
+                                        quote = vm.quote
                                     }
+                                    
+                                }, label: {
+                                        Image(systemName: "arrow.clockwise")
+                                            .font(.largeTitle)
+                                            .foregroundStyle(.white)
+                                            .padding()
+                                            .background(.ultraThinMaterial)
+                                            .clipShape(.rect(cornerRadius: 15))
                                 })
                             }
                             Divider()
