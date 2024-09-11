@@ -17,8 +17,17 @@ class ViewModel {
         case successRandCharacter
         case failed(error: Error)
     }
+    enum newFetch {
+        case nStarted
+        case randomQuote
+        case fetching
+        case failed(error: Error)
+    }
+    
     //no one can change this property
     private(set) var status: FetchStatus = .notStarted
+    
+    private(set) var quoteStatus: newFetch = .nStarted
     
     private let fetcher = FetchService()
     
@@ -82,6 +91,21 @@ class ViewModel {
             
         } catch {
             status = .failed(error: error)
+        }
+    }
+    
+    func getCharacterQuote(for character: String, from show: String) async {
+        quoteStatus = .fetching
+        do {
+            let quoteTest = try await fetcher.fetchQuote(from: show)
+            if quoteTest.character == character {
+                quote = quoteTest
+                quoteStatus = .randomQuote
+            } else {
+                await getCharacterQuote(for: character, from: show)
+            }
+        } catch {
+            quoteStatus = .failed(error: error)
         }
     }
     

@@ -139,7 +139,7 @@ struct FetchView: View {
         }
         .ignoresSafeArea()
         .sheet(isPresented: $showCharacterInfo, content: {
-            CharacterView(character: vm.character, show: show)
+            CharacterView(character: vm.character, show: show, quote: vm.quote)
         })
         .onAppear() {
             let num = Int.random(in: 0...100)

@@ -11,6 +11,9 @@ struct CharacterView: View {
     
     let character: Character
     let show: String
+    @State var quote: Quote
+    
+    let vm = ViewModel()
     
     var body: some View {
         GeometryReader { geo in
@@ -40,10 +43,53 @@ struct CharacterView: View {
                         .padding(.top, 60)
                         
                         VStack(alignment: .leading) {
-                            Text(character.name)
-                                .font(.largeTitle)
-                            Text("Portrayed By: \(character.portrayedBy)")
-                                .font(.subheadline)
+                            Text(quote.quote)
+                                .minimumScaleFactor(0.5)
+                                .multilineTextAlignment(.center)
+                                .padding()
+                                .background(.ultraThinMaterial)
+                                .clipShape(.rect(cornerRadius: 25))
+                                .foregroundStyle(.white)
+                                .frame(alignment: .center)
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(character.name)
+                                        .font(.largeTitle)
+                                    Text("Portrayed By: \(character.portrayedBy)")
+                                        .font(.subheadline)
+                                }
+                                Spacer()
+                                Button(action: {
+                                    Task {
+                                        await vm.getCharacterQuote(for: character.name, from: show)
+                                    }
+                                    quote = vm.quote
+                                }, label: {
+                                    switch vm.quoteStatus {
+                                    case .nStarted:
+                                        Image(systemName: "arrow.clockwise")
+                                            .font(.largeTitle)
+                                            .foregroundStyle(.white)
+                                            .padding()
+                                            .background(.ultraThinMaterial)
+                                            .clipShape(.rect(cornerRadius: 15))
+                                    case .randomQuote:
+                                        Image(systemName: "arrow.clockwise")
+                                            .font(.largeTitle)
+                                            .foregroundStyle(.white)
+                                            .padding()
+                                            .background(.ultraThinMaterial)
+                                            .clipShape(.rect(cornerRadius: 15))
+                                    case .fetching:
+                                        ProgressView()
+                                            .padding()
+                                            .background(.ultraThinMaterial)
+                                            .clipShape(.rect(cornerRadius: 15))
+                                    case .failed(let error):
+                                        Text(error.localizedDescription)
+                                    }
+                                })
+                            }
                             Divider()
                             
                             Text("\(character.name) Character Info")
@@ -105,14 +151,20 @@ struct CharacterView: View {
                         .id(1)
                     }
                     .scrollIndicators(.hidden)
+                    .onAppear() {
+                        
+                    }
                 }
             }
         }
         .ignoresSafeArea()
+        .onAppear(perform: {
+            
+        })
     }
 }
 
 #Preview {
-    CharacterView(character: ViewModel().character, show: Constants.bbName)
+    CharacterView(character: ViewModel().character, show: Constants.bbName, quote: ViewModel().quote)
         .preferredColorScheme(.dark)
 }
