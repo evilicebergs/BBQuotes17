@@ -40,6 +40,6 @@ struct ContentView: View {
  1 - fetch quote automatically when app launches ✅
  2 - when fetching quote make image random ✅
  3 - fetch random character, dont forget to check production /characters/random ✅
- 4 - on characterView add a quote and button to fetch a new random quote /character=Walter+White
- 5 - add chance to fetch simpsons quote
+ 4 - on characterView add a quote and button to fetch a new random quote ✅ /character=Walter+White
+ 5 - add chance to fetch simpsons quote✅
  */

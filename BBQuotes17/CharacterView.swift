@@ -88,7 +88,6 @@ struct CharacterView: View {
                                     withAnimation {
                                         quote = vm.quote
                                     }
-                                    
                                 }, label: {
                                         Image(systemName: "arrow.clockwise")
                                             .font(.largeTitle)

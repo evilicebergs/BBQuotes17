@@ -26,6 +26,8 @@
 		F4815E762C7A17B2008E3084 /* sampledeath.json in Resources */ = {isa = PBXBuildFile; fileRef = F4815E732C7A17B2008E3084 /* sampledeath.json */; };
 		F4815E772C7A17B2008E3084 /* samplequote.json in Resources */ = {isa = PBXBuildFile; fileRef = F4815E742C7A17B2008E3084 /* samplequote.json */; };
 		F4B6375D2C8A01E600A73F0B /* RandomCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6375C2C8A01E600A73F0B /* RandomCharacterView.swift */; };
+		F4CC0B162C96FE1200CD88AC /* Simpson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC0B152C96FE1200CD88AC /* Simpson.swift */; };
+		F4CC0B182C9705A200CD88AC /* SimpsonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC0B172C9705A200CD88AC /* SimpsonView.swift */; };
 		F4E7C9522C85D5BA004CAD19 /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E7C9512C85D5BA004CAD19 /* EpisodeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		F4815E732C7A17B2008E3084 /* sampledeath.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampledeath.json; sourceTree = "<group>"; };
 		F4815E742C7A17B2008E3084 /* samplequote.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = samplequote.json; sourceTree = "<group>"; };
 		F4B6375C2C8A01E600A73F0B /* RandomCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCharacterView.swift; sourceTree = "<group>"; };
+		F4CC0B152C96FE1200CD88AC /* Simpson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simpson.swift; sourceTree = "<group>"; };
+		F4CC0B172C9705A200CD88AC /* SimpsonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpsonView.swift; sourceTree = "<group>"; };
 		F4E7C9512C85D5BA004CAD19 /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,12 +91,14 @@
 				F4815E652C7A16DD008E3084 /* ContentView.swift */,
 				F434DA242C7DFEFA0005DB92 /* FetchView.swift */,
 				F400BDDC2C80898200E9B03D /* CharacterView.swift */,
+				F4CC0B172C9705A200CD88AC /* SimpsonView.swift */,
 				F4E7C9512C85D5BA004CAD19 /* EpisodeView.swift */,
 				F4B6375C2C8A01E600A73F0B /* RandomCharacterView.swift */,
 				F400BDE22C809FC600E9B03D /* Constants.swift */,
 				F40D792B2C7CB55B00EDF657 /* Quote.swift */,
 				F40D792D2C7CB5C500EDF657 /* Character.swift */,
 				F400BDE42C80A10600E9B03D /* Episode.swift */,
+				F4CC0B152C96FE1200CD88AC /* Simpson.swift */,
 				F46379CB2C7CCEE0003AAE6A /* ViewModel.swift */,
 				F46379C92C7CBE23003AAE6A /* FetchService.swift */,
 				F40D792F2C7CB68900EDF657 /* Death.swift */,
@@ -197,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CC0B182C9705A200CD88AC /* SimpsonView.swift in Sources */,
 				F40D79302C7CB68900EDF657 /* Death.swift in Sources */,
 				F400BDE52C80A10600E9B03D /* Episode.swift in Sources */,
 				F400BDE32C809FC600E9B03D /* Constants.swift in Sources */,
@@ -211,6 +218,7 @@
 				F400BDDD2C80898200E9B03D /* CharacterView.swift in Sources */,
 				F40D792E2C7CB5C500EDF657 /* Character.swift in Sources */,
 				F46379CC2C7CCEE0003AAE6A /* ViewModel.swift in Sources */,
+				F4CC0B162C96FE1200CD88AC /* Simpson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

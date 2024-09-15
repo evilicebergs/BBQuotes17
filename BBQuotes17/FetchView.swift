@@ -77,6 +77,9 @@ struct FetchView: View {
                                 .onTapGesture {
                                     showCharacterInfo.toggle()
                                 }
+                        case .simpsonSuccess:
+                            //sample
+                            SimpsonView(simpson: vm.simpson)
                         }
                         
                         Spacer(minLength: 20)

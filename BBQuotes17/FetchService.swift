@@ -34,6 +34,20 @@ struct FetchService {
         return quote
     }
     
+    func fetchSimpson() async throws -> Simpson {
+        let simpsonURL = URL(string: "https://thesimpsonsquoteapi.glitch.me/quotes")!
+        
+        let (data, response) = try await URLSession.shared.data(from: simpsonURL)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw FetchError.badResponse
+        }
+        
+        let simpson = try JSONDecoder().decode([Simpson].self, from: data)
+
+        return simpson[0]
+    }
+    
     func fetchCharacter(_ name: String) async throws -> Character {
         let characterURL = baseUrl.appending(path: "characters")
         let fetchURL = characterURL.appending(queryItems: [URLQueryItem(name: "name", value: name)])
