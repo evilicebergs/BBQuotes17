@@ -12,6 +12,7 @@ struct CharacterView: View {
     let character: Character
     let show: String
     @State var quote: Quote
+    @State var arrowRotate = false
     
     let vm = ViewModel()
     
@@ -54,21 +55,25 @@ struct CharacterView: View {
                                     .foregroundStyle(.white)
                                     .frame(alignment: .center)
                             case .randomQuote:
-                                Text(quote.quote)
-                                    .minimumScaleFactor(0.5)
-                                    .multilineTextAlignment(.center)
-                                    .padding()
-                                    .background(.ultraThinMaterial)
-                                    .clipShape(.rect(cornerRadius: 25))
-                                    .foregroundStyle(.white)
-                                    .frame(alignment: .center)
-                            case .fetching:
-                                HStack(alignment: .center, content: {
-                                    Spacer()
-                                    ProgressView()
+                                withAnimation {
+                                    Text(quote.quote)
+                                        .minimumScaleFactor(0.5)
+                                        .multilineTextAlignment(.center)
                                         .padding()
-                                    Spacer()
-                                })
+                                        .background(.ultraThinMaterial)
+                                        .clipShape(.rect(cornerRadius: 25))
+                                        .foregroundStyle(.white)
+                                        .frame(alignment: .center)
+                                }
+                            case .fetching:
+                                withAnimation{
+                                    HStack(alignment: .center, content: {
+                                        Spacer(minLength: 30)
+                                        ProgressView()
+                                            .padding(.vertical)
+                                        Spacer(minLength: 30)
+                                    })
+                                }
                             case .failed(let error):
                                 Text(error.localizedDescription)
                             }
@@ -82,19 +87,31 @@ struct CharacterView: View {
                                 }
                                 Spacer()
                                 Button(action: {
+                                    arrowRotate.toggle()
                                     Task {
                                         await vm.getCharacterQuote(for: character.name, from: show)
                                     }
                                     withAnimation {
                                         quote = vm.quote
                                     }
+                                    
                                 }, label: {
+                                    if #available(iOS 18.0, *) {
                                         Image(systemName: "arrow.clockwise")
                                             .font(.largeTitle)
                                             .foregroundStyle(.white)
                                             .padding()
                                             .background(.ultraThinMaterial)
                                             .clipShape(.rect(cornerRadius: 15))
+                                            .symbolEffect(.rotate, value: arrowRotate)
+                                    } else {
+                                        Image(systemName: "arrow.clockwise")
+                                            .font(.largeTitle)
+                                            .foregroundStyle(.white)
+                                            .padding()
+                                            .background(.ultraThinMaterial)
+                                            .clipShape(.rect(cornerRadius: 15))
+                                    }
                                 })
                             }
                             Divider()

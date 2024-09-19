@@ -99,6 +99,7 @@ struct FetchView: View {
                                 .background(Color(show.removeSpaces() + "Button"))
                                 .clipShape(.rect(cornerRadius: 7))
                                 .shadow(color: Color(show.removeSpaces() + "Shadow"), radius: 2)
+                                .frame(width: geo.size.width/3.6)
                         }
                         Button {
                             Task {
@@ -112,6 +113,7 @@ struct FetchView: View {
                                 .background(Color(show.removeSpaces() + "Button"))
                                 .clipShape(.rect(cornerRadius: 7))
                                 .shadow(color: Color(show.removeSpaces() + "Shadow"), radius: 2)
+                                .frame(width: geo.size.width/3.6)
                         }
                         Spacer()
                         Button {
@@ -126,9 +128,10 @@ struct FetchView: View {
                                 .background(Color(show.removeSpaces() + "Button"))
                                 .clipShape(.rect(cornerRadius: 7))
                                 .shadow(color: Color(show.removeSpaces() + "Shadow"), radius: 2)
+                                .frame(width: geo.size.width/3.6)
                         }
                     }
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 31)
                     
                     Spacer(minLength: 95)
                     
