@@ -94,6 +94,7 @@ class ViewModel {
         do {
             character = try await fetcher.getRandomCharacter()
             if character.productions.contains(show) {
+                await getCharacterQuote(for: character.name, from: show)
                 status = .successRandCharacter
             } else {
                 await getRandCharacter(from: show)

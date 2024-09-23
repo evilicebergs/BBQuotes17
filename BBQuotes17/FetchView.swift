@@ -34,6 +34,15 @@ struct FetchView: View {
                             EmptyView()
                         case .fetching:
                             ProgressView()
+                                .padding()
+                                .background(.ultraThinMaterial)
+                                .clipShape(.rect(cornerRadius: 15))
+                            Text("It Can Take a Little While...")
+                                .font(.subheadline)
+                                .padding()
+                                .background(.ultraThinMaterial)
+                                .clipShape(.rect(cornerRadius: 15))
+                                
                         case .successQuote:
                             Text("\"\(vm.quote.quote)\"")
                                 .minimumScaleFactor(0.5)
@@ -145,7 +154,7 @@ struct FetchView: View {
         }
         .ignoresSafeArea()
         .sheet(isPresented: $showCharacterInfo, content: {
-            CharacterView(character: vm.character, show: show, quote: vm.quote)
+            CharacterView(character: vm.character, show: show, quote: vm.quote.quote)
         })
         .onAppear() {
             let num = Int.random(in: 0...100)

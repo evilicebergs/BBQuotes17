@@ -11,7 +11,7 @@ struct CharacterView: View {
     
     let character: Character
     let show: String
-    @State var quote: Quote
+    @State var quote: String
     @State var arrowRotate = false
     
     let vm = ViewModel()
@@ -46,7 +46,7 @@ struct CharacterView: View {
                         VStack(alignment: .leading) {
                             switch vm.quoteStatus {
                             case .nStarted:
-                                Text(quote.quote)
+                                Text(quote)
                                     .minimumScaleFactor(0.5)
                                     .multilineTextAlignment(.center)
                                     .padding()
@@ -56,7 +56,7 @@ struct CharacterView: View {
                                     .frame(alignment: .center)
                             case .randomQuote:
                                 withAnimation {
-                                    Text(quote.quote)
+                                    Text(quote)
                                         .minimumScaleFactor(0.5)
                                         .multilineTextAlignment(.center)
                                         .padding()
@@ -91,9 +91,9 @@ struct CharacterView: View {
                                     Task {
                                         await vm.getCharacterQuote(for: character.name, from: show)
                                     }
-                                    withAnimation {
-                                        quote = vm.quote
-                                    }
+//                                    withAnimation {
+//                                        quote = vm.quote.quote
+//                                    }
                                     
                                 }, label: {
                                     if #available(iOS 18.0, *) {
@@ -189,6 +189,6 @@ struct CharacterView: View {
 }
 
 #Preview {
-    CharacterView(character: ViewModel().character, show: Constants.bbName, quote: ViewModel().quote)
+    CharacterView(character: ViewModel().character, show: Constants.bbName, quote: ViewModel().quote.quote)
         .preferredColorScheme(.dark)
 }
